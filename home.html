@@ -22,9 +22,9 @@
     function sendDemoNotification() {
       Notification.requestPermission().then(perm => {
         if (perm === "granted") {
-          navigator.serviceWorker.getRegistration().then(reg => {
-            reg.showNotification('This is a demo!', {
-              body: 'Simulated push notification.',
+          navigator.serviceWorker.ready.then(registration => {
+            registration.showNotification('This is a demo!', {
+              body: 'CVTMS - New case',
               icon: '/icon-192x192.png'
             });
           });
