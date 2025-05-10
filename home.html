@@ -20,20 +20,35 @@
     }
     
     function sendDemoNotification() {
-      alert("abbas 1");
       Notification.requestPermission().then(perm => {
-        alert("abbas 2");
         if (perm === "granted") {
-          alert("abbas 3");
           navigator.serviceWorker.ready.then(registration => {
-            alert("abbas 4");
-            registration.showNotification('This is a demo!', {
+            registration.showNotification('ALERT', {
               body: 'CVTMS - New case',
-              icon: 'icon-192x192.png'
+              icon: 'icon-192x192.png',
+              data: {
+                url: 'openNoti.html'
+              }
             });
           });
         }
       });
+
+      function sendDemoNotification() {
+  Notification.requestPermission().then(perm => {
+    if (perm === "granted") {
+      navigator.serviceWorker.ready.then(registration => {
+        registration.showNotification('ALERT', {
+          body: 'CVTMS - New case',
+          icon: 'icon-192x192.png',
+          data: {
+            url: 'case.html' // 🔗 URL to open
+          }
+        });
+      });
+    }
+  });
+}
     }
 	</script>
 </head>
