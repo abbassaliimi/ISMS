@@ -8,8 +8,27 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style type="text/css">
-        html, body { width:30%; background-color:#e1e1e1; }
         * { box-sizing: border-box; }
+
+        html, body {
+          margin: 0;
+          padding: 15px;
+          background-color: #e1e1e1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+        }
+
+        #mainContent {
+          padding: 30px;
+          text-align: center;
+          border-radius: 15px;
+          border: 5px solid #ccc;
+          background-color: #fff;
+          width: 100%;
+          max-width: 400px;
+        }
 	</style>
   <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>  
 	<script type="text/javascript" src="js/controller.js"></script>
@@ -37,7 +56,7 @@
   </script>
 </head>
 <body>
-<div id="mainContent" style="text-align:center; padding:30px; -webkit-border-radius: 15px 15px 15px 15px; border:5px solid #ccc; background-color:#fff;">
+<div id="mainContent">
 <form id="loginForm" method="post" action="PageControllerWeb.aspx?act=login">
   <table width="100%" height="" border="0" cellpadding="0" cellspacing="0" id="">
     <tr><td colspan="2" align="center"><img width="90%" src="img/kaneka.png" /><br></td></tr>
