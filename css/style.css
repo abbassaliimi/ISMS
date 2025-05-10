@@ -30,7 +30,7 @@ input { border:0; }
 }
 
 .hantarBtn2 {
-	font-size:1.2em; padding:13px; text-align:center;
+	font-size:1.2em; padding:10px; text-align:center;
 	color:#fff;
 	background: #088F8F;
 	-webkit-border-radius: 5px 5px 5px 5px; 
@@ -41,7 +41,7 @@ input { border:0; }
 }
 
 .hantarBtn3 {
-	font-size:1.2em; padding:13px; text-align:center;
+	font-size:1.2em; padding:10px; text-align:center;
 	color:#fff;
 	background: #9F2B68;
 	-webkit-border-radius: 5px 5px 5px 5px; 
@@ -52,7 +52,7 @@ input { border:0; }
 }
 
 .hantarBtn4 {
-	font-size:1.2em; padding:13px; text-align:center;
+	font-size:1.2em; padding:10px; text-align:center;
 	color:#fff;
 	background: #EC5800;
 	-webkit-border-radius: 5px 5px 5px 5px; 
