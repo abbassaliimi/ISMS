@@ -20,12 +20,16 @@
     }
     
     function sendDemoNotification() {
+      alert("abbas 1");
       Notification.requestPermission().then(perm => {
+        alert("abbas 2");
         if (perm === "granted") {
+          alert("abbas 3");
           navigator.serviceWorker.ready.then(registration => {
+            alert("abbas 4");
             registration.showNotification('This is a demo!', {
               body: 'CVTMS - New case',
-              icon: '/icon-192x192.png'
+              icon: 'icon-192x192.png'
             });
           });
         }

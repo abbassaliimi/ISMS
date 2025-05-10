@@ -2,11 +2,9 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('isms-app-cache').then((cache) => {
       return cache.addAll([
-        '/',
-        '/index.html',
-        '/home.html',
-        '/icon-192x192.png',
-        '/icon-512x512.png'
+        'index.html',
+        'icon-192x192.png',
+        'icon-512x512.png'
       ]);
     })
   );
