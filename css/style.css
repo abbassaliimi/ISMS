@@ -1,14 +1,19 @@
-html, body { height:100%; }
 
-html {
-    display: table;
-    margin: auto;
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
 }
 
 body {
-    display: table-cell;
-    vertical-align: middle;
-    padding:9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, sans-serif;
+	background-color: #e1e1e1;
 }
 
 td { font-family:Arial; font-size:0.8em; }
