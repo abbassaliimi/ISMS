@@ -1,36 +1,5 @@
 $(document).ready(function () {
 
-    // // jQuery CORS example
-    // $.ajax({
-    //     xhrFields:{
-    //         withCredentials: true
-    //     },
-    //     type: "GET",
-    //     url: "https://bepi.mpob.gov.my/admin2/price_local_daily_view_cpo_msia.php?more=Y&jenis=3M"
-    // }).done(function(data){
-    //     console.log(data);
-    // });
-
-    var settings = {
-        'cache': false,
-        'dataType': "jsonp",
-        "async": true,
-        "crossDomain": true,
-        "url": "https://bepi.mpob.gov.my/admin2/price_local_daily_view_cpo_msia.php?more=Y&jenis=3M",
-        "method": "GET",
-        "headers": {
-            "accept": "application/json",
-            "Access-Control-Allow-Origin":"*"
-        }
-    }
-
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-
-    });
-
-
-
     $("#monthViewBtn").click(function(){
         $("#cvtms_week").slideUp("fast", function(){
             $("#cvtms_month").slideDown("fast", function(){
@@ -64,7 +33,7 @@ $(document).ready(function () {
     });
 
     $("#openCVTMS").click(function(){
-        pushNoti();
+        //pushNoti();
     });
 });
 

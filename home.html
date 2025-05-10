@@ -16,8 +16,21 @@
 	<script type="text/javascript" src="js/controller.js"></script>
   <script type="text/javascript">
     function logout() {
-          window.location.href = "index.html";
-	    }
+      window.location.href = "index.html";
+    }
+    
+    function sendDemoNotification() {
+      Notification.requestPermission().then(perm => {
+        if (perm === "granted") {
+          navigator.serviceWorker.getRegistration().then(reg => {
+            reg.showNotification('This is a demo!', {
+              body: 'Simulated push notification.',
+              icon: '/icon-192x192.png'
+            });
+          });
+        }
+      });
+    }
 	</script>
 </head>
 <body style="vertical-align:top; padding-top:20px;">
@@ -163,7 +176,7 @@
             <br>
             <div id="monthViewBtn" class="hantarBtnA" onClick="">Show month view</div>
             <div id="weekViewBtn" class="hantarBtnA invi" onClick="">Show week view</div>
-            <br><div id="openCVTMS" class="hantarBtn2" onClick=""><b>Open CVTMS</b>&nbsp;<span class="material-icons">open_in_new</span></div>
+            <br><div id="openCVTMS" class="hantarBtn2" onClick="sendDemoNotification()"><b>Open CVTMS</b>&nbsp;<span class="material-icons">open_in_new</span></div>
             <!-- <span class="material-icons" style="font-size:3em; color:#F2274C;">warning_amber</span> 3 cases
             <br>
             <span class="material-icons" style="font-size:3em; color:#4BB543;">verified_user</span> 100 granted access -->
