@@ -4,7 +4,10 @@ self.addEventListener('install', (event) => {
       return cache.addAll([
         'index.html',
         'icon-192x192.png',
-        'icon-512x512.png'
+        'icon-512x512.png',
+        'cvtms-192x192.png',
+        'iscd-192x192.png',
+        'sacs-192x192.png'
       ]);
     })
   );
