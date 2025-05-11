@@ -35,8 +35,8 @@
         if (perm === "granted") {
           navigator.serviceWorker.ready.then(registration => {
             registration.showNotification('ALERT!', {
-              body: 'CVTMS - New case',
-              icon: 'icon-192x192.png',
+              body: 'CVTMS - Skip safety briefing',
+              icon: 'cvtms.png',
               data: {
                 url: 'openNoti.html'
               }
@@ -44,22 +44,38 @@
           });
         }
       });
+    }
 
-      function sendDemoNotification() {
-  Notification.requestPermission().then(perm => {
-    if (perm === "granted") {
-      navigator.serviceWorker.ready.then(registration => {
-        registration.showNotification('ALERT', {
-          body: 'CVTMS - New case',
-          icon: 'icon-192x192.png',
-          data: {
-            url: 'case.html' // 🔗 URL to open
-          }
-        });
+    function sendDemoNotification2() {
+      Notification.requestPermission().then(perm => {
+        if (perm === "granted") {
+          navigator.serviceWorker.ready.then(registration => {
+            registration.showNotification('ALERT!', {
+              body: 'ISCD - PPE not complied',
+              icon: 'iscd.png',
+              data: {
+                url: 'case.html' 
+              }
+            });
+          });
+        }
       });
     }
-  });
-}
+
+    function sendDemoNotification3() {
+      Notification.requestPermission().then(perm => {
+        if (perm === "granted") {
+          navigator.serviceWorker.ready.then(registration => {
+            registration.showNotification('ALERT!', {
+              body: 'SACS - Out of bound',
+              icon: 'sacs.png',
+              data: {
+                url: 'case.html' 
+              }
+            });
+          });
+        }
+      });
     }
 	</script>
 </head>
@@ -264,7 +280,7 @@
             <br>
             <div id="monthViewBtn" class="hantarBtnA" onClick="">Show month view</div>
             <div id="weekViewBtn" class="hantarBtnA invi" onClick="">Show week view</div>
-            <br><div id="" class="hantarBtn3" onClick=""><b>Open ISCD</b>&nbsp;<span class="material-icons">open_in_new</span></div>
+            <br><div id="" class="hantarBtn3" onClick="sendDemoNotification2()"><b>Open ISCD</b>&nbsp;<span class="material-icons">open_in_new</span></div>
           </div>
         </td>
         <td>&nbsp;&nbsp;</td>
@@ -319,7 +335,7 @@
             <br>
             <div id="monthViewBtn" class="hantarBtnA" onClick="">Show month view</div>
             <div id="weekViewBtn" class="hantarBtnA invi" onClick="">Show week view</div>
-            <br><div id="" class="hantarBtn4" onClick=""><b>Open SACS</b>&nbsp;<span class="material-icons">open_in_new</span></div>
+            <br><div id="" class="hantarBtn4" onClick="sendDemoNotification3()"><b>Open SACS</b>&nbsp;<span class="material-icons">open_in_new</span></div>
           </div>
         </td>
       </tr>
@@ -378,7 +394,7 @@
         <td width="1%">4</td>
         <td align="center">4/6/2024</td>
         <td align="center">12:01</td>
-        <td align="center" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>SACS</b></td>
+        <td align="center" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>ISCD</b></td>
         <td align="center">PPE not complied</td>
         <td width="20%" align="center"><div class="iscdRow">Open&nbsp;ISCD&nbsp;<span class="material-icons" style="font-size:1.5em;">open_in_new</span></div></td>
       </tr>
