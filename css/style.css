@@ -178,10 +178,10 @@ input { border:0; }
 }
 
 .highlightRow {
-	background: #e1e1e1;
+	background: #f3f3f3;
 	padding: 7px;
-	border-top:2px solid #295ba7;
-	border-bottom:2px solid #295ba7;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
 	font-weight:bold;
 	font-size:1em;
 }

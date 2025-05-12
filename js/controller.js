@@ -1,19 +1,55 @@
 $(document).ready(function () {
 
-    $("#monthViewBtn").click(function(){
+    $("#monthViewBtn_cvtms").click(function(){
         $("#cvtms_week").slideUp("fast", function(){
             $("#cvtms_month").slideDown("fast", function(){
-                $("#monthViewBtn").hide();
-                $("#weekViewBtn").show();
+                $("#monthViewBtn_cvtms").hide();
+                $("#weekViewBtn_cvtms").show();
             });
         });
     });
 
-    $("#weekViewBtn").click(function(){
+    $("#weekViewBtn_cvtms").click(function(){
         $("#cvtms_month").slideUp("fast", function(){
             $("#cvtms_week").slideDown("fast", function(){
-                $("#weekViewBtn").hide();
-                $("#monthViewBtn").show();
+                $("#weekViewBtn_cvtms").hide();
+                $("#monthViewBtn_cvtms").show();
+            });
+        });
+    });
+
+    $("#monthViewBtn_iscd").click(function(){
+        $("#iscd_week").slideUp("fast", function(){
+            $("#iscd_month").slideDown("fast", function(){
+                $("#monthViewBtn_iscd").hide();
+                $("#weekViewBtn_iscd").show();
+            });
+        });
+    });
+
+    $("#weekViewBtn_iscd").click(function(){
+        $("#iscd_month").slideUp("fast", function(){
+            $("#iscd_week").slideDown("fast", function(){
+                $("#weekViewBtn_iscd").hide();
+                $("#monthViewBtn_iscd").show();
+            });
+        });
+    });
+
+    $("#monthViewBtn_sacs").click(function(){
+        $("#sacs_week").slideUp("fast", function(){
+            $("#sacs_month").slideDown("fast", function(){
+                $("#monthViewBtn_sacs").hide();
+                $("#weekViewBtn_sacs").show();
+            });
+        });
+    });
+
+    $("#weekViewBtn_sacs").click(function(){
+        $("#sacs_month").slideUp("fast", function(){
+            $("#sacs_week").slideDown("fast", function(){
+                $("#weekViewBtn_sacs").hide();
+                $("#monthViewBtn_sacs").show();
             });
         });
     });
