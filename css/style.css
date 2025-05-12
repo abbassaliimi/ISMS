@@ -16,6 +16,10 @@ body {
 	background-color: #e1e1e1;
 }
 
+.material-icons {
+	vertical-align: middle;
+}
+
 td { font-family:Arial; font-size:0.8em; }
 li { list-style:none; }
 ul { text-decoration:none; }
