@@ -158,6 +158,10 @@ input { border:0; }
 	cursor: pointer;
 	padding:7px;
 }
+.cvtmsRow:hover {
+	background: #000;
+}
+
 
 .iscdRow {
 	font-weight:bold;
@@ -166,6 +170,9 @@ input { border:0; }
 	-webkit-border-radius: 5px; 
 	cursor: pointer;
 	padding:7px;
+}
+.iscdRow:hover {
+	background: #000;
 }
 
 .sacsRow {
@@ -176,12 +183,16 @@ input { border:0; }
 	cursor: pointer;
 	padding:7px;
 }
+.sacsRow:hover {
+	background: #000;
+}
 
 .highlightRow {
 	background: #f3f3f3;
-	padding: 7px;
+	/* padding: 7px;
 	border-top:1px solid #ccc;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid #ccc; */
 	font-weight:bold;
-	font-size:1em;
+	font-size:1.3em;
+	cursor: pointer;
 }

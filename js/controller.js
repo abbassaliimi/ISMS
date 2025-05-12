@@ -73,6 +73,21 @@ $(document).ready(function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hoverableRows = document.querySelectorAll("tr.notiRow");
+  
+    hoverableRows.forEach(row => {
+      row.addEventListener("mouseenter", () => {
+        row.classList.add("highlightRow");
+      });
+  
+      row.addEventListener("mouseleave", () => {
+        row.classList.remove("highlightRow");
+      });
+    });
+  });
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./service-worker.js')
     .then((registration) => {
