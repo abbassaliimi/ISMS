@@ -28,25 +28,8 @@
   <script type="text/javascript">
     function checkEnter(e) {
         if (e.keyCode == 13) {
-            setTimeout(sendDemoNotification3, 5000);
             verifyLogin();
         }
-    }
-
-    function sendDemoNotification3() {
-      Notification.requestPermission().then(perm => {
-        if (perm === "granted") {
-          navigator.serviceWorker.ready.then(registration => {
-            registration.showNotification('ALERT!', {
-              body: 'SACS - Out of bound',
-              icon: 'sacs-192x192.png',
-              data: {
-                url: 'openNoti.html' 
-              }
-            });
-          });
-        }
-      });
     }
     
     function verifyLogin() {
