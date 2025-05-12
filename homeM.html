@@ -75,14 +75,14 @@
     }
 	</script>
 </head>
-<body style="align-items:flex-start; padding-top:20px;">
+<body style="align-items:flex-start; padding-top:20px;" onload="setTimeout(sendDemoNotification3, 5000);">
 <div id="mainContent">
 
   <div style="background-color:#fff; padding:20px; -webkit-border-radius:10px; text-align:center;">
     <div><img width="90%" src="img/kaneka.png" /></div>
     <div style="font-size:0.9em;">Integrated&nbsp;Security&nbsp;Management&nbsp;System</div>
   </div>
-  <div class="selectedMenu" style="font-family:Arial; font-size:1.2em; -webkit-border-radius:10px; text-align:center;">ALL NOTIFICATIONS</div>
+  <div onClick="sendDemoNotification3()" class="selectedMenu" style="font-family:Arial; font-size:1.2em; -webkit-border-radius:10px; text-align:center;">ALL NOTIFICATIONS</div>
   <div style="background-color:#fff; padding:15px; -webkit-border-radius:10px; text-align:center;">
     <div style="border:solid 1px #e1e1e1; font-size:0.8em;"><input onkeyup="" class="inputStyle2" type="text" id="" name="" placeholder="Type to search"/></div>
     <br>
