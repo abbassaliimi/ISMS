@@ -61,6 +61,7 @@
     function sendDemoNotification3() {
       Notification.requestPermission().then(perm => {
         if (perm === "granted") {
+          addTopRow();
           navigator.serviceWorker.ready.then(registration => {
             registration.showNotification('ALERT!', {
               body: 'SACS - Out of bound',
@@ -72,6 +73,32 @@
           });
         }
       });
+    }
+
+    function addTopRow() {
+      const table = document.getElementById("notiTable");
+      const tbody = table.tBodies[0]; 
+
+      const now = new Date();
+      const formattedDateTime = 
+        now.getDate().toString().padStart(2, '0') + '/' +
+        (now.getMonth() + 1).toString().padStart(2, '0') + '/' +
+        now.getFullYear() + ' ' +
+        now.getHours().toString().padStart(2, '0') + ':' +
+        now.getMinutes().toString().padStart(2, '0');
+
+      // Create new content row
+      const contentRow = document.createElement("tr");
+      contentRow.innerHTML = `
+        <td align="center">${formattedDateTime}</td>
+        <td align="left" style="color:#EC5800;">
+          <span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;
+          <b>SACS</b> Out of bound
+        </td>
+      `;
+
+      // Insert at the top
+      tbody.insertBefore(contentRow, tbody.firstChild);
     }
 	</script>
 </head>
@@ -88,44 +115,43 @@
     <br>
 
     
-    <table width="100%" height="" border="0" cellpadding="7" cellspacing="0" id="">
-      <tr><td colspan="6" style="border-top:1px solid #ccc"></td></tr>
-      <tr class="notiRow2">
+    <table width="100%" height="" border="0" cellpadding="7" cellspacing="0" id="notiTable">
+      <tr>
         <td align="center">5/6/2024 09:01</td>
         <td align="left" style="color:#088F8F;"><span class="material-icons" style="font-size:1.5em;">assignment_late</span>&nbsp;<b>CVTMS</b>
           Skip safety briefing</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">4/6/2024 18:00</td>
         <td align="left" style="color:#088F8F;"><span class="material-icons" style="font-size:1.5em;">assignment_late</span>&nbsp;<b>CVTMS</b>
           Did not checked out</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">4/6/2024 12:01</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">4/6/2024 12:01</td>
         <td align="left" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>ISCD</b>
           PPE not complied</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">1/6/2024 11:01</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">1/6/2024 10:13</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">1/6/2024 09:01</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
-      <tr class="notiRow2">
+      <tr>
         <td align="center">25/5/2024 09:01</td>
         <td align="left" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>ISCD</b>
           PPE not complied</td>
