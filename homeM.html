@@ -90,7 +90,7 @@
       // Create new content row
       const contentRow = document.createElement("tr");
       contentRow.innerHTML = `
-        <td align="center">${formattedDateTime}</td>
+        <td align="center" width="25%">${formattedDateTime}</td>
         <td align="left" style="color:#EC5800;">
           <span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;
           <b>SACS</b> Out of bound
@@ -99,6 +99,22 @@
 
       // Insert at the top
       tbody.insertBefore(contentRow, tbody.firstChild);
+    }
+
+    function filterTable() {
+      const input = document.getElementById("searchNoti");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("notiTable");
+      const rows = table.getElementsByTagName("tr");
+
+      for (let i = 0; i < rows.length; i++) {
+        const rowText = rows[i].textContent || rows[i].innerText;
+        if (rowText.toLowerCase().includes(filter)) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
     }
 	</script>
 </head>
@@ -111,7 +127,7 @@
   </div>
   <div onClick="addTopRow()" class="selectedMenu" style="font-family:Arial; font-size:1.2em; -webkit-border-radius:10px; text-align:center;">ALL NOTIFICATIONS</div>
   <div style="background-color:#fff; padding:15px; -webkit-border-radius:10px; text-align:center;">
-    <div style="border:solid 1px #e1e1e1; font-size:0.8em;"><input onkeyup="" class="inputStyle2" type="text" id="" name="" placeholder="Type to search"/></div>
+    <div style="border:solid 1px #e1e1e1; font-size:0.8em;"><input onkeyup="filterTable()" class="inputStyle2" type="text" id="searchNoti" name="" placeholder="Type to search"/></div>
     <br>
 
     
@@ -122,51 +138,51 @@
           Skip safety briefing</td>
       </tr>
       <tr>
-        <td align="center">4/6/2024 18:00</td>
+        <td align="center width="25%"">4/6/2024 18:00</td>
         <td align="left" style="color:#088F8F;"><span class="material-icons" style="font-size:1.5em;">assignment_late</span>&nbsp;<b>CVTMS</b>
           Did not checked out</td>
       </tr>
       <tr>
-        <td align="center">4/6/2024 12:01</td>
+        <td align="center width="25%"">4/6/2024 12:01</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
       <tr>
-        <td align="center">4/6/2024 12:01</td>
+        <td align="center width="25%"">4/6/2024 12:01</td>
         <td align="left" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>ISCD</b>
           PPE not complied</td>
       </tr>
       <tr>
-        <td align="center">1/6/2024 11:01</td>
+        <td align="center width="25%"">1/6/2024 11:01</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
       <tr>
-        <td align="center">1/6/2024 10:13</td>
+        <td align="center width="25%"">1/6/2024 10:13</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
       <tr>
-        <td align="center">1/6/2024 09:01</td>
+        <td align="center width="25%"">1/6/2024 09:01</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
           Out of bound</td>
       </tr>
       <tr>
-        <td align="center">25/5/2024 09:01</td>
+        <td align="center width="25%"">25/5/2024 09:01</td>
         <td align="left" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>ISCD</b>
           PPE not complied</td>
       </tr>
-      <tr class="notiRow">
+      <tr class="notiRow width="25%"">
         <td align="center">25/5/2024 10:01</td>
         <td align="left" style="color:#9F2B68;"><span class="material-icons" style="font-size:1.5em;">report_problem</span>&nbsp;<b>ISCD</b>
         PPE not complied</td>
       </tr>
-      <tr class="notiRow">
+      <tr class="notiRow width="25%"">
         <td align="center">24/05/2024 09:21</td>
         <td align="left" style="color:#088F8F;"><span class="material-icons" style="font-size:1.5em;">assignment_late</span>&nbsp;<b>CVTMS</b>
         Skip safety briefing</td>
       </tr>
-      <tr class="notiRow">
+      <tr class="notiRow width="25%"">
         <td align="center">23/05/2024 09:31</td>
         <td align="left" style="color:#EC5800;"><span class="material-icons" style="font-size:1.5em;">emergency_share</span>&nbsp;<b>SACS</b>
         Out of bound</td>
